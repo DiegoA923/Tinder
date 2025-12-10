@@ -1,0 +1,153 @@
+/* ====== GENERAL ====== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #ff5864, #ff6f61);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor estilo app */
+.container {
+    width: 90%;
+    max-width: 380px;
+    background: white;
+    padding: 30px 25px;
+    border-radius: 18px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Logo Tinder */
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: auto;
+}
+
+
+/* Títulos */
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center;
+}
+
+/* Formularios */
+.form input,
+.form textarea,
+.form select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+/* Botones */
+.btn {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+/* Botón principal */
+.btn-dark {
+    background-color: #ff4458;
+    color: white;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-dark:hover {
+    background-color: #ff2a4d;
+}
+
+/* Botón secundario */
+.btn-light {
+    background-color: #f5f5f5;
+    color: #444;
+}
+
+.btn-light:hover {
+    background-color: #e8e8e8;
+}
+
+/* Mensaje */
+#mensaje {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Home tarjetas */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
+}
+
+.profile-pic {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.username {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.city {
+    margin-top: -5px;
+    font-size: 15px;
+    color: #666;
+}
+
+/* RESPONSIVE */
+@media (max-height: 650px) {
+    .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/* ===== SCROLL INTERNO EN FORMULARIO ===== */
+
+.form-scroll {
+    display: flex;
+    flex-direction: column;
+    height: 90vh; /* ocupa casi toda la pantalla */
+    justify-content: flex-start;
+}
+
+.scroll-area {
+    overflow-y: auto;
+    margin-top: 10px;
+    padding-right: 5px;
+    max-height: 65vh; /* controla el scroll */
+}
+
+/* Estilizar barra de scroll (opcional y bonito) */
+.scroll-area::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+    background: #ff5864;
+    border-radius: 10px;
+}
+

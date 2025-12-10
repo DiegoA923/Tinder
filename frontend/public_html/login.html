@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iniciar Sesión</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <img src="img/tinder-logo.png" class="logo">
+
+            <h1 class="title">Iniciar Sesión</h1>
+
+            <form id="loginForm" class="form">
+                <input type="text" id="nickname" placeholder="Nickname" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+
+                <button class="btn btn-dark">Entrar</button>
+            </form>
+
+            <button class="btn btn-light" onclick="goBack()">Volver</button>
+
+            <p id="mensaje"></p>
+        </div>
+
+        <script src="js/login.js"></script>
+    </body>
+</html>

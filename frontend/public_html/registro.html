@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registrarse</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+
+        <div class="container form-scroll">
+
+            <img src="img/tinder-logo.png" class="logo">
+
+            <h1 class="title">Crear Cuenta</h1>
+
+            <div class="scroll-area">
+
+                <form id="registroForm" class="form">
+
+                    <input type="text" id="nickname" placeholder="Nickname" required>
+                    <input type="text" id="nombre" placeholder="Nombre" required>
+                    <input type="number" id="edad" placeholder="Edad" min="18" required>
+                    <input type="text" id="ciudad" placeholder="Ciudad" required>
+                    <input type="email" id="correo" placeholder="Correo" required>
+                    <input type="password" id="password" placeholder="Contraseña (min 8)" required>
+
+                    <textarea id="descripcion" placeholder="Descripción (opcional)"></textarea>
+
+                    <select id="genero">
+                        <option value="">Selecciona género</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+
+                    <input type="text" id="fotoPerfil" placeholder="URL Foto de Perfil">
+
+                    <button class="btn btn-dark">Registrarse</button>
+
+                </form>
+
+                <button class="btn btn-light" onclick="goBack()">Volver</button>
+
+                <p id="mensaje"></p>
+
+            </div>
+        </div>
+        <script src="js/registro.js"></script>
+    </body>
+</html>

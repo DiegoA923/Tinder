@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+
+        <div class="container card" id="profileCard">
+            <img class="profile-pic" id="foto" src="" alt="Foto">
+
+            <p class="username" id="nombre"></p>
+            <p class="city" id="ciudad"></p>
+        </div>
+
+        <script>
+            const user = JSON.parse(localStorage.getItem("usuario"));
+
+            document.getElementById("foto").src = user.fotoPerfil || "img/default.jpg";
+            document.getElementById("nombre").textContent = user.nombre + " (" + user.edad + ")";
+            document.getElementById("ciudad").textContent = user.ciudad;
+        </script>
+
+    </body>
+</html>
