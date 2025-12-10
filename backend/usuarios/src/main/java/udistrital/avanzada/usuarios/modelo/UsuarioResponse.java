@@ -2,6 +2,7 @@ package udistrital.avanzada.usuarios.modelo;
 
 import lombok.Data;
 import java.time.LocalDate;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -33,4 +34,5 @@ public class UsuarioResponse {
     private String descripcion;
     private String genero;
     private String fotoPerfil;
+    private List<FotoResponse> fotos;
 }

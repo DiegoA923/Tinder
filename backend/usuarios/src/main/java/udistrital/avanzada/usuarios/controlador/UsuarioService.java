@@ -3,9 +3,13 @@ package udistrital.avanzada.usuarios.controlador;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.springframework.web.client.RestTemplate;
+import udistrital.avanzada.usuarios.modelo.FotoResponse;
 import udistrital.avanzada.usuarios.modelo.UsuarioDTO;
 import udistrital.avanzada.usuarios.repository.UsuarioRepository;
 import udistrital.avanzada.usuarios.modelo.UsuarioResponse;
@@ -25,6 +29,7 @@ import udistrital.avanzada.usuarios.modelo.UsuarioResponse;
 public class UsuarioService {
 
     private final UsuarioRepository repository;
+    private final RestTemplate restTemplate;
 
     /**
      * Busca el DTO completo (incluye contraseña).
@@ -47,7 +52,7 @@ public class UsuarioService {
 
 
         enviarCorreoRegistro(guardado); // Enviar correo de confirmacion
-
+        
         return new UsuarioResponse(
                 guardado.getId(),
                 guardado.getNickname(),
@@ -58,7 +63,8 @@ public class UsuarioService {
                 guardado.getFechaRegistro(),
                 guardado.getDescripcion(),
                 guardado.getGenero(),
-                guardado.getFotoPerfil()
+                guardado.getFotoPerfil(),
+                new ArrayList()
         );
 
     }
@@ -114,6 +120,16 @@ public class UsuarioService {
         r.setDescripcion(dto.getDescripcion());
         r.setGenero(dto.getGenero());
         r.setFotoPerfil(dto.getFotoPerfil());
+        
+        String url = "http://localhost:8092/fotos/fotos/"+dto.getId(); // endpoint que devuelve un objeto
+        try {
+            FotoResponse[] fotosArray = restTemplate.getForObject(url, FotoResponse[].class);
+            List<FotoResponse> fotos = Arrays.asList(fotosArray);        
+            r.setFotos(fotos);
+        } catch (Exception e) {
+            r.setFotos(new ArrayList<>());
+        }
+        
 
         return r;
     }
