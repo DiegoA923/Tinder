@@ -1,4 +1,4 @@
-package udistrital.avanzada.usuarios;
+package udistrital.avanzada.usuarios.modelo;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

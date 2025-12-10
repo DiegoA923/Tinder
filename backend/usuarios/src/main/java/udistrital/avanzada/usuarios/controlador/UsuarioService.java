@@ -1,4 +1,4 @@
-package udistrital.avanzada.usuarios;
+package udistrital.avanzada.usuarios.controlador;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -6,6 +6,9 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.web.client.RestTemplate;
+import udistrital.avanzada.usuarios.modelo.UsuarioDTO;
+import udistrital.avanzada.usuarios.repository.UsuarioRepository;
+import udistrital.avanzada.usuarios.modelo.UsuarioResponse;
 
 /**
  * Servicio encargado de la lógica de negocio asociada al usuario.
