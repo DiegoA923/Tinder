@@ -1,4 +1,4 @@
-package udistrital.avanzada.fotos.modelo;
+package udistrital.avanzada.matches.modelo;
 
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * FotoResponse representa el objeto que se envia comon respuesta a los clientes
+ * MatchResponse representa el objeto que se envia comon respuesta a los clientes
  *
  * @author mauricio
  * @version 1.0
@@ -17,9 +17,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class FotoResponse {
-    private Long id;   
-    private String url;
-    private Long usuarioId;
+public class MatchResponse {
+    private Long id;
+    private long usuario1Id;
+    private long usuario2Id;
+    private boolean activo;
     private LocalDateTime fechaCreacion;
+    private LocalDateTime fechaModificacion;
 }
+

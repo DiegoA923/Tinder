@@ -31,7 +31,7 @@ public class FotosApplication {
                 //allowedMethods("*").allowedHeaders("*")  deja pasar los metodos y los headers
                 // si el backend esta en el mismo dominio y puerto del frontend, no hay necesidad de este metodo
                 //o en su defecto se coloca la misma direccion y puerto
-                registry.addMapping("/fotos**").allowedOrigins("http://localhost:8383").allowedMethods("*").allowedHeaders("*");
+                registry.addMapping("/fotos**").allowedOrigins("http://localhost:8383","http://localhost:8090").allowedMethods("*").allowedHeaders("*");
             }
         };
     }

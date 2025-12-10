@@ -1,10 +1,12 @@
-package udistrital.avanzada.usuarios;
+package udistrital.avanzada.usuarios.controlador;
 
 import java.util.Map;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import udistrital.avanzada.usuarios.modelo.UsuarioDTO;
+import udistrital.avanzada.usuarios.modelo.UsuarioResponse;
 
 /**
  * Controlador REST para gestionar las operaciones del usuario.

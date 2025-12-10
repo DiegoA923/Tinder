@@ -35,7 +35,7 @@ public class FotoService {
         FotoDTO f = repositorio.save(foto);
         FotoResponse res = null;
         if (f != null) {
-            res = new FotoResponse(f.getId(), f.getUrl(), f.getUsuarioId());
+            res = new FotoResponse(f.getId(), f.getUrl(), f.getUsuarioId(), f.getFechaCreacion());
         }
         //se retorna el juguete guardada
         return res;
@@ -50,7 +50,7 @@ public class FotoService {
         List<FotoDTO> fotos = repositorio.findAllByUsuarioId(idUsuario);
         List<FotoResponse> fotosRes = new ArrayList();
         for (FotoDTO foto : fotos) {
-            FotoResponse f = new FotoResponse(foto.getId(), foto.getUrl(), foto.getUsuarioId());
+            FotoResponse f = new FotoResponse(foto.getId(), foto.getUrl(), foto.getUsuarioId(), foto.getFechaCreacion());
             fotosRes.add(f);
         }
         return fotosRes;
@@ -66,7 +66,7 @@ public class FotoService {
         Optional<FotoDTO> foto = repositorio.findById(id);
         FotoResponse res = null;
         if (foto.isPresent()) {
-            res = new FotoResponse(foto.get().getId(), foto.get().getUrl(), foto.get().getUsuarioId());
+            res = new FotoResponse(foto.get().getId(), foto.get().getUrl(), foto.get().getUsuarioId(), foto.get().getFechaCreacion());
         }
         return res;
     }
@@ -108,7 +108,7 @@ public class FotoService {
         if (foto.isPresent()) {
             foto.get().setUrl(nueva.getUrl());
             FotoDTO guardado = repositorio.save(foto.get());
-            res = new FotoResponse(guardado.getId(), guardado.getUrl(), guardado.getUsuarioId());
+            res = new FotoResponse(guardado.getId(), guardado.getUrl(), guardado.getUsuarioId(), guardado.getFechaCreacion());
         }
         return res;
     }

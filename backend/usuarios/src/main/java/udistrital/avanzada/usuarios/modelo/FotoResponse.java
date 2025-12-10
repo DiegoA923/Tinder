@@ -1,4 +1,4 @@
-package udistrital.avanzada.fotos.modelo;
+package udistrital.avanzada.usuarios.modelo;
 
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * FotoResponse representa el objeto que se envia comon respuesta a los clientes
+ * FotoResponse representa el objeto respuesta de una foto
  *
  * @author mauricio
  * @version 1.0
