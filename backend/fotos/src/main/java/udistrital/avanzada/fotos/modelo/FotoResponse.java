@@ -1,5 +1,6 @@
 package udistrital.avanzada.fotos.modelo;
 
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,4 +21,5 @@ public class FotoResponse {
     private Long id;   
     private String url;
     private Long usuarioId;
+    private LocalDateTime fechaCreacion;
 }
