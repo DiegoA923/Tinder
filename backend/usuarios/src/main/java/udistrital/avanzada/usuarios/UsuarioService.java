@@ -3,6 +3,9 @@ package udistrital.avanzada.usuarios;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * Servicio encargado de la lógica de negocio asociada al usuario.
@@ -39,6 +42,9 @@ public class UsuarioService {
 
         UsuarioDTO guardado = repository.save(usuario);
 
+
+        enviarCorreoRegistro(guardado); // Enviar correo de confirmacion
+
         return new UsuarioResponse(
                 guardado.getId(),
                 guardado.getNickname(),
@@ -69,6 +75,24 @@ public class UsuarioService {
         }
 
         return toResponse(u);
+    }
+
+    private void enviarCorreoRegistro(UsuarioDTO usuario) {
+
+        try {
+            RestTemplate rest = new RestTemplate();
+
+            Map<String, String> email = new HashMap<>();
+            email.put("destinatario", usuario.getCorreo());
+            email.put("asunto", "¡Bienvenido a Tinder UD!");
+            email.put("mensaje", "Hola " + usuario.getNombre()
+                    + ", tu registro fue exitoso. ¡Bienvenido!");
+
+            rest.postForObject("http://localhost:8091/email/enviar", email, String.class);
+
+        } catch (Exception e) {
+            System.out.println("Error enviando correo: " + e.getMessage());
+        }
     }
 
     /**

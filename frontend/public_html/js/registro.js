@@ -40,7 +40,7 @@ form.addEventListener("submit", async (e) => {
     if (errores.length > 0) {
         mensaje.innerHTML = errores.join("<br>");
         mensaje.style.color = "red";
-        return; // NO ENVÍA NADA AL BACKEND
+        return;
     }
 
     try {
@@ -50,9 +50,6 @@ form.addEventListener("submit", async (e) => {
             body: JSON.stringify(data)
         });
 
-        // ---------------------------
-        // VALIDAR RESPUESTA DEL BACKEND
-        // ---------------------------
         if (!response.ok) {
             const errorText = await response.text();
             mensaje.innerHTML = "Error: " + errorText;
@@ -60,9 +57,8 @@ form.addEventListener("submit", async (e) => {
             return;
         }
 
-        // Si todo salió bien:
         const result = await response.json();
-        mensaje.textContent = "Usuario registrado correctamente 🎉";
+        mensaje.textContent = "Usuario registrado correctamente 🎉 Revisa tu correo.";
         mensaje.style.color = "lightgreen";
 
         setTimeout(() => {
